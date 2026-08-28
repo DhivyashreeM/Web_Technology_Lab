@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Array</title>
+</head>
+
+<body>
+
+    <h1>Student Details</h1>
+
+    <div id="result"></div>
+
+    <script>
+
+        // Array of student objects
+        var students = [
+
+            {
+                name: "John",
+                num: 123,
+                dob: "20-Apr-1995",
+                age: 25
+            },
+
+            {
+                name: "Joseph",
+                num: 456,
+                dob: "05-Jan-1998",
+                age: 22
+            },
+
+            {
+                name: "Mary",
+                num: 789,
+                dob: "10-Jun-1997",
+                age: 23
+            }
+
+        ];
+
+        var output = "";
+
+        // Traverse the array
+        for (var i = 0; i < students.length; i++) {
+
+            output +=
+                "Name: " + students[i].name + "<br>" +
+                "Number: " + students[i].num + "<br>" +
+                "Date of Birth: " + students[i].dob + "<br>" +
+                "Age: " + students[i].age + "<br><br>";
+
+        }
+
+        // Display student details
+        document.getElementById("result").innerHTML =
+            output;
+
+    </script>
+
+</body>
+</html>

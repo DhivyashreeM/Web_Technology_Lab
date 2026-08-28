@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Image</title>
+</head>
+
+<body>
+
+    <h1>Change Image</h1>
+
+    <img id="myImage"
+         src="https://static.vecteezy.com/system/resources/thumbnails/053/733/179/small/every-detail-of-a-sleek-modern-car-captured-in-close-up-photo.jpg"
+         width="300"
+         height="200">
+
+    <br><br>
+
+    <button id="changeBtn">
+        Change Image
+    </button>
+
+    <script>
+
+        var image =
+            document.getElementById("myImage");
+
+        var button =
+            document.getElementById("changeBtn");
+
+        button.addEventListener("click", function () {
+
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2zpB3vZ3I_vs3iCuLrXOd3kQlr3LYksagnDSDPr7BE6f8VwxbYzT39oNJ&s=10";
+
+        });
+
+    </script>
+
+</body>
+</html>

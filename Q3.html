@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events</title>
+</head>
+
+<body>
+
+    <h1>Mouse Over Example</h1>
+
+    <p id="para">
+        Move your mouse over this paragraph.
+    </p>
+
+    <script>
+
+        var paragraph = document.getElementById("para");
+
+        // Increase font size when mouse enters
+        paragraph.addEventListener("mouseover", function () {
+
+            paragraph.style.fontSize = "30px";
+
+        });
+
+        // Decrease font size when mouse leaves
+        paragraph.addEventListener("mouseout", function () {
+
+            paragraph.style.fontSize = "16px";
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Background</title>
+</head>
+
+<body>
+
+    <h1>Dynamic Background</h1>
+
+    <p>
+        The background color changes automatically every 30 seconds.
+    </p>
+
+    <script>
+
+        function changeBackgroundColor() {
+
+            // Array of colors
+            var colors = [
+                "red",
+                "blue",
+                "green",
+                "yellow",
+                "orange",
+                "pink",
+                "purple"
+            ];
+
+            // Generate random number
+            var random =
+                Math.floor(Math.random() * colors.length);
+
+            // Change background color
+            document.body.style.backgroundColor =
+                colors[random];
+        }
+
+        // Change color every 30 seconds
+        setInterval(changeBackgroundColor, 30000);
+
+    </script>
+
+</body>
+</html>
