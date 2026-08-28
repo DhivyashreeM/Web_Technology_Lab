@@ -1,7 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1> My First Heading </h1>
-        <p> My first <br> paragraph. </p>
-    </body>
+<head>
+    <title>Heads or Tails</title>
+</head>
+
+<body>
+
+    <h1>Heads or Tails?</h1>
+
+    <div>
+
+        <img src="https://www.pngitem.com/pimgs/m/123-1232373_coin-png-pic-heads-and-tails-indian-coin.png"
+             id="coin"
+             width="150"
+             height="150">
+        <br><br>
+
+        <button id="flip">Flip!</button>
+
+    </div>
+
+    <p>
+        Heads Total:
+        <span id="num_heads">0</span>
+        <br>
+
+        Tails Total:
+        <span id="num_tails">0</span>
+    </p>
+
+    <script>
+
+        var heads = 0;
+        var tails = 0;
+
+        document.getElementById("flip")
+            .addEventListener("click", flipFunction);
+
+        function flipFunction() {
+
+            // Generate random number
+            var random = Math.random();
+
+            if (random < 0.5) {
+
+                // Heads
+                document.getElementById("coin").src = "https://www.pngitem.com/pimgs/m/123-1232373_coin-png-pic-heads-and-tails-indian-coin.png";
+
+                heads++;
+
+                document.getElementById("num_heads").innerHTML =
+                    heads;
+            }
+
+            else {
+
+                // Tails
+                document.getElementById("coin").src = "https://media.istockphoto.com/id/626264352/photo/one-indian-rupee-coin.jpg?s=612x612&w=0&k=20&c=CslWdgJ9WpMX0SVN1snv8dNMXtkgpDDvmSNyGp6f_ls=";
+
+                tails++;
+
+                document.getElementById("num_tails").innerHTML =
+                    tails;
+            }
+        }
+
+    </script>
+
+</body>
 </html>

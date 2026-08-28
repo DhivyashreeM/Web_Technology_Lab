@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Six Header Tags</title>
-    </head>
-    <body>
-        <h1>This is heading 1</h1>
-        <h2>This is heading 2</h2>
-        <h3>This is heading 3</h3>
-        <h4>This is heading 4</h4>
-        <h5>This is heading 5</h5>
-        <h6>This is heading 6</h6>
-    </body>
+<head>
+    <title>Fruit Farm</title>
+
+    <style>
+        #garden {
+            margin-top: 20px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            margin: 2px;
+        }
+
+        .cell img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Fruit Farm</h1>
+
+    <label>Rows:</label>
+    <input type="number" id="rows" min="1">
+
+    <br><br>
+
+    <label>Columns:</label>
+    <input type="number" id="columns" min="1">
+
+    <br><br>
+
+    <button onclick="grow()">Plant Garden</button>
+
+    <div id="garden"></div>
+
+
+    <script>
+
+        function grow() {
+
+            // Get number of rows and columns
+            let rows = parseInt(document.getElementById("rows").value);
+            let columns = parseInt(document.getElementById("columns").value);
+
+            let garden = document.getElementById("garden");
+
+            // Clear previous garden
+            garden.innerHTML = "";
+
+            // Check input
+            if (isNaN(rows) || isNaN(columns) || rows <= 0 || columns <= 0) {
+                alert("Please enter valid rows and columns.");
+                return;
+            }
+
+            // Create the required grid
+            for (let i = 0; i < rows; i++) {
+
+                for (let j = 0; j < columns; j++) {
+
+                    // Create a cell
+                    let cell = document.createElement("div");
+                    cell.className = "cell";
+
+                    // Randomly select Apple or Orange
+                    let fruit = Math.random() < 0.5
+                        ? "Apple"
+                        : "Orange";
+
+                    // Create image
+                    let img = document.createElement("img");
+
+                    if (fruit === "Apple") {
+                        img.src = "https://static.vecteezy.com/system/resources/thumbnails/041/153/128/small/ai-generated-front-view-wet-red-ripe-apple-on-black-background-fruit-with-water-drops-photo.jpg";
+                        img.alt = "Apple";
+                    } 
+                    else {
+                        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6u1MG4OBsEyr27UxdhisoqbIfGwmOGIXTX4vVgr_Rg&s=10";
+                        img.alt = "Orange";
+                    }
+
+                    // Add image to cell
+                    cell.appendChild(img);
+
+                    // Add cell to garden
+                    garden.appendChild(cell);
+                }
+
+                // Move to next row
+                garden.appendChild(document.createElement("br"));
+            }
+        }
+
+    </script>
+
+</body>
 </html>
+```

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortest and Longest Word</title>
+</head>
+
+<body>
+
+    <h2>Find Shortest and Longest Word</h2>
+
+    <input type="text" id="sentence"
+           placeholder="Enter a sentence">
+
+    <button id="findBtn">Find Words</button>
+
+    <p>Shortest Word:
+        <span id="shortest"></span>
+    </p>
+
+    <p>Longest Word:
+        <span id="longest"></span>
+    </p>
+
+    <script>
+        document.getElementById("findBtn").addEventListener("click", function () {
+
+            let text = document.getElementById("sentence").value;
+
+            let words = text.trim().split(/\s+/);
+
+            let shortest = words[0];
+            let longest = words[0];
+
+            for (let word of words) {
+                if (word.length < shortest.length) {
+                    shortest = word;
+                }
+
+                if (word.length > longest.length) {
+                    longest = word;
+                }
+            }
+
+            document.getElementById("shortest").innerHTML = shortest;
+            document.getElementById("longest").innerHTML = longest;
+        });
+    </script>
+
+</body>
+</html>
